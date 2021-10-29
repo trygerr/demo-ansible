@@ -16,3 +16,10 @@
       debug:
         msg: "{{ ansible_facts.packages['sudo'][0].version }}"
 #      when: "'sudo' in ansible_facts.packages"
+
+    - name: Sortie vers fichier
+      lineinfile:
+        path: /tmp/toto.txt
+        line: "{{ ansible_hostname }}"
+        line: "{{ ansible_facts['default_ipv4']['address'] }}"
+      
