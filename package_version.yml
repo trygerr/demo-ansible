@@ -18,6 +18,7 @@
 #      when: "'sudo' in ansible_facts.packages"
 
     - name: Sortie vers fichier
+      become: yes
       lineinfile:
         path: /tmp/toto.txt
         state: present
