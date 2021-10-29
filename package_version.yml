@@ -14,12 +14,6 @@
 
     - name: Version sudo
       debug:
-        msg: "{{ ansible_facts.packages['sudo'][0].version }}"
+        msg: "{{ ansible_hostname }} {{ ansible_facts.packages['sudo'][0].version }}"
 
-    - name: Sortie vers fichier
-      become: yes
-      lineinfile:
-        path: /tmp/toto.txt
-        state: present
-        line: "{{ ansible_hostname }} {{ ansible_facts['default_ipv4']['address'] }}"
-      
+   
