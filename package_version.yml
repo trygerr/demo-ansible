@@ -20,6 +20,6 @@
     - name: Sortie vers fichier
       lineinfile:
         path: /tmp/toto.txt
-        line: "{{ ansible_hostname }}"
-        line: "{{ ansible_facts['default_ipv4']['address'] }}"
+        state: present
+        line: "{{ ansible_hostname }} {{ ansible_facts['default_ipv4']['address'] }}"
       
